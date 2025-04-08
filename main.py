@@ -2,10 +2,10 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, CallbackQueryHandler, ContextTypes
 import os
 
-TOKEN = os.environ.get("BOT_TOKEN")
+TOKEN = os.environ.get("TOKEN")
 
 # Ссылка на бесплатный курс (пока на канал, позже заменишь)
-COURSE_LINK = "https://t.me/твоя_ссылка_на_канал"
+COURSE_LINK = "https://t.me/@po_umu_bot"
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     keyboard = [
