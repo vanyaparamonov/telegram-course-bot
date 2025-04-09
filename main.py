@@ -21,9 +21,12 @@ if __name__ == "__main__":
     app = ApplicationBuilder().token(TOKEN).build()
     app.add_handler(CommandHandler("start", start))
 
-    application.run_webhook(
-    listen="0.0.0.0",
-    port=port,
-    url_path=TOKEN,
-    webhook_url=f"https://{your_render_service_url}/{TOKEN}"
-)
+    port = int(os.environ.get("PORT", 8443))
+
+    app.run_webhook(
+        listen="0.0.0.0",
+        port=port,
+        url_path=TOKEN,
+        webhook_url=f"{APP_URL}/{TOKEN}"
+    )
+
